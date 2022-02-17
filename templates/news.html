@@ -1,0 +1,7 @@
+{% for i in news %}
+
+    <h1>{{ i.title }}</h1><br>
+    <h4> {{ i.date|date:"d M Y"}} </h4> <br>
+    <a href="{{ i.link }}" > link </a><br>
+    <img src="{{ i.img }}" width="300px" height="300px">
+{% endfor %}
