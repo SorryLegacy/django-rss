@@ -1,7 +1,12 @@
+<h1>News from {{ title }} </h1>
+
 {% for i in news %}
 
-    <h1>{{ i.title }}</h1><br>
+    <h2>{{ i.title }}</h2><br>
     <h4> {{ i.date|date:"d M Y"}} </h4> <br>
     <a href="{{ i.link }}" > link </a><br>
-    <img src="{{ i.img }}" width="300px" height="300px">
+    {% if i.img %}
+        <img src="{{ i.img }}" width="300px" height="300px">
+    {% else %}
+    {% endif %}
 {% endfor %}
