@@ -1,12 +1,17 @@
-<h1>News from {{ title }} </h1>
-
+{% extends 'base.html' %}
+{% block content %}
+<h1 class="title">News from {{ title }} </h1>
 {% for i in news %}
-
-    <h2>{{ i.title }}</h2><br>
-    <h4> {{ i.date|date:"d M Y"}} </h4> <br>
-    <a href="{{ i.link }}" > link </a><br>
-    {% if i.img %}
-        <img src="{{ i.img }}" width="300px" height="300px">
-    {% else %}
-    {% endif %}
+<div class="one">
+    <div class="two">
+        <h2>{{ i.title }}</h2><br>
+        <h4> {{ i.date|date:"d M Y"}} </h4> <br>
+        <a href="{{ i.link }}" > link </a><br>
+        {% if i.img %}
+            <img src="{{ i.img }}" class="full">
+        {% else %}
+        {% endif %}
+    </div>
+</div>
 {% endfor %}
+{% endblock %}

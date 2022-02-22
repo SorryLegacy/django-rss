@@ -1,5 +1,16 @@
-<form method="POST" class="post-form">{% csrf_token %}
-
-        {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Save</button>
-</form>
+{% extends 'base.html' %}
+{% block content %}
+<div class="title" align="center">
+        <h1> Rss-reader</h1>
+        <h2> Enter your link and limit for news</h2>
+</div>
+<div class="parent">
+        <div class="block">
+                <form method="POST" class="post-form">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit" class="btn btn-light">Save</button>
+                </form>
+        </div>
+</div>
+{% endblock %}

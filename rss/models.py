@@ -1,9 +1,10 @@
 from django.db import models
+from django.core.validators import MinValueValidator
 
 
 class Url(models.Model):
     url = models.URLField(verbose_name="link")
-    limit = models.IntegerField(verbose_name="Limit", null=True, blank=True)
+    limit = models.IntegerField(verbose_name="Limit", null=True, blank=True, validators=[MinValueValidator(1)])
 
     def __str__(self):
         return self.url
