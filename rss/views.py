@@ -38,5 +38,5 @@ def news(request):
             img = None
         temp = PostFromUrl.objects.get_or_create(title=title, date=date, link=link, img=img)
 
-    news = PostFromUrl.objects.all().distinct()[:url.limit]
+    news = PostFromUrl.objects.all().order_by("-date").distinct()[:url.limit]
     return render(request, 'news.html', {'title': news_from, 'news': news})

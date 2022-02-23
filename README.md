@@ -1,6 +1,6 @@
 # Django-Rss
 
-This is a simple rss feed where you insert a link and a limit on the number of news. There is also an api at 
+This is a simple rss feed where you insert a link (for example <url>https://news.yahoo.com/rss/ </url>) and a limit on the number of news. There is also an api at 
 <code>localhost:8000/posts</code>
 
 The libraries that are used:<br>
